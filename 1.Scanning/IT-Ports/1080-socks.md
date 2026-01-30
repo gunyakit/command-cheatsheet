@@ -132,7 +132,7 @@ chisel client $lhost:8080 R:socks
 ## Common SOCKS Implementations
 
 | Software | Default Port | Notes |
-|----------|-------------|-------|
+| --- | --- | --- |
 | SSH -D | 1080 | Dynamic port forward |
 | Dante | 1080 | Enterprise proxy |
 | 3proxy | 1080 | Lightweight |
@@ -143,10 +143,10 @@ chisel client $lhost:8080 R:socks
 
 ## Tools
 
-- proxychains: https://github.com/haad/proxychains
-- proxychains-ng: https://github.com/rofl0r/proxychains-ng
-- chisel: https://github.com/jpillora/chisel
-- reGeorg: https://github.com/sensepost/reGeorg
+- proxychains: <https://github.com/haad/proxychains>
+- proxychains-ng: <https://github.com/rofl0r/proxychains-ng>
+- chisel: <https://github.com/jpillora/chisel>
+- reGeorg: <https://github.com/sensepost/reGeorg>
 
 ---
 

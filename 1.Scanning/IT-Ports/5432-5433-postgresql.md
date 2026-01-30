@@ -1,22 +1,22 @@
 # Port 5432, 5433 - POSTGRESQL
 
 ## Table of Contents
+
 - [Enumeration](#enumeration)
-    - [Check Connect](#check-connect)
-    - [Command](#command)
-    - [Nuclei](#nuclei)
-- [BruteForce](#bruteforce)
-    - [NetExec](#netexec)
+  - [Check Connect](#check-connect)
+  - [Nuclei](#nuclei)
+- [Brute Force](#brute-force)
+  - [NetExec](#netexec)
 - [Exploit](#exploit)
-    - [Command Execution (CVE-2019-9193)](#command-execution-cve-2019-9193)
-    - [Webshell via COPY](#webshell-via-copy)
-    - [File Read/Write](#file-readwrite)
+  - [Command Execution (CVE-2019-9193)](#command-execution-cve-2019-9193)
+  - [Webshell via COPY](#webshell-via-copy)
+  - [File Read/Write](#file-readwrite)
 
 ---
 
-### Enumeration
+## Enumeration
 
-#### Check Connect
+### Check Connect
 
 ```shell
 psql -h $rhost -p 5432 -U postgres -d postgres
@@ -78,15 +78,17 @@ SELECT datname FROM pg_database WHERE datistemplate = false;  # List non-templat
     ```
 
 
-#### Nuclei
+### Nuclei
 
 ```shell
 nuclei -u $rhost:5432 -tags database,postgres
 ```
 
-### BruteForce
+---
 
-#### NetExec
+## Brute Force
+
+### NetExec
 
 ```shell
 nxc postgres $rhost -u 'postgres' -p 'postgres'

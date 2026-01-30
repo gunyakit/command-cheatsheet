@@ -1,6 +1,7 @@
 # Port 88 - Kerberos
 
 ## Table of Contents
+
 - [Enumeration](#enumeration)
   - [Nmap Scripts](#nmap-scripts)
   - [User Enumeration](#user-enumeration)
@@ -37,6 +38,8 @@ nmap -p 88 --script krb5-enum-users --script-args krb5-enum-users.realm=$domain,
 ---
 
 ## Attacks
+
+> **📚 For complete Kerberos attack methodology, theory, and advanced techniques, see [Kerberos Attacks](../../3.AD-Exploit/3.3.Kerberos-Attacks.md)**
 
 ### AS-REP Roasting
 
@@ -134,6 +137,8 @@ impacket-psexec -k -no-pass $domain/$user@$rhost
 ---
 
 ## Ticket Manipulation
+
+> **📚 For complete Golden/Silver Ticket theory and advanced usage, see [Kerberos Attacks](../../3.AD-Exploit/3.3.Kerberos-Attacks.md#golden-ticket)**
 
 ### Pass-the-Ticket
 

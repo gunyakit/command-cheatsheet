@@ -1,6 +1,7 @@
 # Port 113 - Ident
 
 ## Table of Contents
+
 - [Enumeration](#enumeration)
 - [Exploitation](#exploitation)
 
@@ -91,6 +92,7 @@ if __name__ == "__main__":
 ## Information Gathered
 
 The ident service reveals:
+
 - Username running the service
 - Process information
 - Can help identify:

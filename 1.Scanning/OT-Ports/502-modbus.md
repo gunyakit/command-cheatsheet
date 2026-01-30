@@ -1,6 +1,7 @@
 # Port 502 - Modbus
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Enumeration](#enumeration)
 - [Read/Write Registers](#readwrite-registers)
@@ -88,7 +89,9 @@ modbus write $rhost %M0 1
 #!/usr/bin/env python3
 from pymodbus.client import ModbusTcpClient
 
-client = ModbusTcpClient('$rhost', port=502)
+target_host = "TARGET_IP"  # Replace with target
+
+client = ModbusTcpClient(target_host, port=502)
 client.connect()
 
 # Read holding registers (address 0, count 10)
@@ -135,7 +138,9 @@ mbtget -w6 -a 0 1234 $rhost
 from pymodbus.client import ModbusTcpClient
 from pymodbus.exceptions import ModbusException
 
-client = ModbusTcpClient('$rhost', port=502)
+target_host = "TARGET_IP"  # Replace with target
+
+client = ModbusTcpClient(target_host, port=502)
 client.connect()
 
 for unit_id in range(1, 248):
@@ -156,7 +161,9 @@ client.close()
 # ⚠️ Only for authorized testing!
 from pymodbus.client import ModbusTcpClient
 
-client = ModbusTcpClient('$rhost', port=502)
+target_host = "TARGET_IP"  # Replace with target
+
+client = ModbusTcpClient(target_host, port=502)
 client.connect()
 
 # Write zeros to all registers (DANGEROUS!)
@@ -173,7 +180,9 @@ client.close()
 #!/usr/bin/env python3
 from pymodbus.client import ModbusTcpClient
 
-client = ModbusTcpClient('$rhost', port=502)
+target_host = "TARGET_IP"  # Replace with target
+
+client = ModbusTcpClient(target_host, port=502)
 client.connect()
 
 # Turn all coils OFF (could stop machinery!)

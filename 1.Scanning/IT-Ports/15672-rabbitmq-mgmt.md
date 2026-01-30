@@ -138,7 +138,7 @@ curl -u user:pass http://$rhost:15672/api/queues | jq '.[] | {name, messages}'
 import requests
 from requests.auth import HTTPBasicAuth
 
-host = "$rhost"
+host = "TARGET_IP"  # Replace with target
 user = "guest"
 passwd = "guest"
 
@@ -187,7 +187,7 @@ cat /var/lib/rabbitmq/.erlang.cookie
 ## Other RabbitMQ Ports
 
 | Port | Service |
-|------|---------|
+| --- | --- |
 | 5672 | AMQP |
 | 5671 | AMQP over TLS |
 | 15672 | Management UI |

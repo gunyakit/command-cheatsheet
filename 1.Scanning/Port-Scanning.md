@@ -201,3 +201,12 @@ sudo nmap --script "default,safe" -p $port $rhost
 sudo nmap --script "vuln and safe" -p $port $rhost
 ```
 
+---
+
+## See Also
+
+- **[IT-Ports/](IT-Ports/)** - Service-specific enumeration (SMB, SSH, HTTP, etc.)
+- **[OT-Ports/](OT-Ports/)** - Industrial/SCADA protocol scanning
+- **[AD Exploitation](../3.AD-Exploit/3.1.AD-Exploitation.md)** - Post-scan AD enumeration
+- **[Web Application Analysis](../7.Web-Exploit/7.0.Web-Application-Analysis.md)** - Web service scanning
+

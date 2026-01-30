@@ -6,7 +6,7 @@
   - [Nmap Scripts](#nmap-scripts)
   - [Database Enumeration](#database-enumeration)
   - [User Enumeration](#user-enumeration)
-- [BruteForce](#brute-force)
+- [Brute Force](#brute-force)
 - [Exploit](#exploit)
   - [File Operations](#file-operations)
   - [UDF RCE](#udf-rce)
@@ -124,7 +124,7 @@ use auxiliary/scanner/mysql/mysql_hashdump
 
 ---
 
-## BruteForce
+## Brute Force
 
 ### Hydra
 

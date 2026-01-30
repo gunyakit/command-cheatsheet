@@ -1,6 +1,7 @@
 # Port 53 - DNS
 
 ## Table of Contents
+
 - [Enumeration](#enumeration)
   - [Nmap Scripts](#nmap-scripts)
   - [DNS Lookup](#dns-lookup)
@@ -12,6 +13,7 @@
   - [dnsrecon](#dnsrecon)
   - [dnsenum](#dnsenum)
   - [fierce](#fierce)
+- [Post-Exploitation](#post-exploitation)
 
 ---
 

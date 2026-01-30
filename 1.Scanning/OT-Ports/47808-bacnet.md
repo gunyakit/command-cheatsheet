@@ -1,6 +1,7 @@
 # Port 47808 - BACnet
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Enumeration](#enumeration)
 - [Read/Write Properties](#readwrite-properties)
@@ -15,6 +16,7 @@
 | 47808/UDP | BACnet/IP | Building Automation and Control Networks |
 
 BACnet is used in:
+
 - Building Management Systems (BMS)
 - HVAC systems
 - Access control
@@ -78,9 +80,11 @@ this_device = LocalDeviceObject(
 # Create application
 this_application = BIPSimpleApplication(this_device, '0.0.0.0')
 
+target_host = "TARGET_IP"  # Replace with target
+
 # Read property
 request = ReadPropertyRequest(
-    destination=Address('$rhost'),
+    destination=Address(target_host),
     objectIdentifier=('device', 1),
     propertyIdentifier='objectName',
 )

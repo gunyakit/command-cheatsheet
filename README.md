@@ -1,22 +1,46 @@
-# Command-CheatSheet
+<div align="center">
 
-## Penetration Testing Flow
-
-```mermaid
-graph LR
-    A((Scanning)) --> B((Exploitation))
-    B --> C((Privilege Escalation))
-    B --> D((Lateral Movement))
-    C --> D
-    C --> E((Post Exploitation))
-    D --> E
+```text
+   ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ 
+  ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗
+  ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║
+  ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║
+  ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝
+   ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ 
+   ██████╗██╗  ██╗███████╗ █████╗ ████████╗███████╗██╗  ██╗███████╗███████╗████████╗
+  ██╔════╝██║  ██║██╔════╝██╔══██╗╚══██╔══╝██╔════╝██║  ██║██╔════╝██╔════╝╚══██╔══╝
+  ██║     ███████║█████╗  ███████║   ██║   ███████╗███████║█████╗  █████╗     ██║   
+  ██║     ██╔══██║██╔══╝  ██╔══██║   ██║   ╚════██║██╔══██║██╔══╝  ██╔══╝     ██║   
+  ╚██████╗██║  ██║███████╗██║  ██║   ██║   ███████║██║  ██║███████╗███████╗   ██║   
+   ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   
 ```
+
+# 🔐 Command CheatSheet
+
+*Your Ultimate Penetration Testing Reference Guide*
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+[![OSCP](https://img.shields.io/badge/OSCP-Ready-orange.svg)](https://www.offensive-security.com/pwk-oscp/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/gunyakit/command-cheatsheet/graphs/commit-activity)
 
 ---
 
-## Table of Contents
+**🎯 130+ Cheatsheets** • **📡 70+ Port References** • **🛡️ OSCP Focused** • **⚡ Copy-Paste Ready**
 
-### [1.Scanning](1.Scanning/Port-Scanning.md)
+---
+
+</div>
+
+## 📊 Penetration Testing Flow
+
+![Penetration Testing Flow](./PenetrationTestingFlow.png)
+
+---
+
+## 📚 Table of Contents
+
+### 🔍 [1.Scanning](1.Scanning/Port-Scanning.md)
 
 - [Port Scanning Guide](1.Scanning/Port-Scanning.md) - Nmap, Masscan, Rustscan
 
@@ -107,34 +131,45 @@ graph LR
 | 44818 | EtherNet/IP | [44818-ethernetip.md](1.Scanning/OT-Ports/44818-ethernetip.md) |
 | 47808 | BACnet | [47808-bacnet.md](1.Scanning/OT-Ports/47808-bacnet.md) |
 
-### [2.CVE-Exploit](2.CVE-Exploit/)
+### 💥 [2.CVE-Exploit](2.CVE-Exploit/)
 
 - [CVE Exploit](2.CVE-Exploit/2.1.CVE-Exploit.md) - Shellshock, Sambacry, Drupalgeddon2, Log4Shell, Ghostcat, and more
 - [Buffer Overflow](2.CVE-Exploit/2.2.Buffer-Overflow.md) - Pattern creation, Offset calculation, JMP ESP gadgets, Shellcode generation, Exploit development
 
-### [3.AD-Exploit](3.AD-Exploit/)
+### 🏢 [3.AD-Exploit](3.AD-Exploit/)
 
 - [AD Exploitation](3.AD-Exploit/3.1.AD-Exploitation.md) - PowerView, BloodHound, ASREPRoast, Kerberoasting, DCSync, Golden/Silver Tickets, AD CS, NTLM Relay, Responder, AMSI Bypass
 - [Password Attacks](3.AD-Exploit/3.2.Password-Attacks.md) - hashcat, John, Hydra, Kerbrute, mimikatz, NetExec
+- [Kerberos Attacks](3.AD-Exploit/3.3.Kerberos-Attacks.md) - ASREPRoast, Kerberoasting, Golden/Silver Tickets, DCSync, Constrained Delegation
+- [NTLM Relay & Responder](3.AD-Exploit/3.4.NTLM-Relay-and-Responder.md) - Responder setup, NTLM Relay attacks, Pass-the-Hash, Authentication Coercion
+- [AD CS Attacks](3.AD-Exploit/3.5.AD-CS-Attacks.md) - Certipy, ESC1-ESC8, PassTheCert, PKINIT, Golden Certificate
+- [Shadow Credentials](3.AD-Exploit/3.6.Shadow-Credentials.md) - pyWhisker, Whisker, msDS-KeyCredentialLink, PKINIT Auth
+- [Kerberos Delegation](3.AD-Exploit/3.7.Kerberos-Delegation.md) - Constrained Delegation, RBCD, S4U Attack Chain
+- [AD Enumeration Tools](3.AD-Exploit/3.8.AD-Enumeration-Tools.md) - bloodyAD, adPEAS, NetExec, Invoke-ADEnum, ADRecon
 
-### [4.Privilege-Escalation](4.Privilege-Escalation/)
+### ⬆️ [4.Privilege-Escalation](4.Privilege-Escalation/)
 
-- [Privilege Escalation Windows](4.Privilege-Escalation/4.1.Privilege-Escalation-Windows.md) - Potato exploits, PowerUp, winPEAS, DLL Hijacking
+- [Privilege Escalation Windows](4.Privilege-Escalation/4.1.Privilege-Escalation-Windows.md) - Potato exploits, PowerUp, winPEAS, DLL Hijacking, **Credential Storage Exploitation**
 - [Privilege Escalation Linux](4.Privilege-Escalation/4.2.Privilege-Escalation-Linux.md) - SUDO, SUID, Capabilities, Cron, Kernel exploits, Docker escape
+- [GTFOBins Linux](4.Privilege-Escalation/4.3.GTFOBins-Linux.md) - SUDO escapes, SUID exploits, Capabilities, File Read/Write, Reverse Shells
+- [LOLBAS Windows](4.Privilege-Escalation/4.4.LOLBAS-Windows.md) - File Download, Code Execution, UAC Bypass, ADS, AWL Bypass
+- [Potato Exploits](4.Privilege-Escalation/4.5.Potato-Exploits.md) - JuicyPotato, PrintSpoofer, RoguePotato, SweetPotato, GodPotato
+- [Windows PrivEsc Tools](4.Privilege-Escalation/4.6.Windows-PrivEsc-Tools.md) - RunasCs, Seatbelt, SharpUp, PrivescCheck, Watson
 
-### [5.Lateral-Movement](5.Lateral-Movement/)
+### ↔️ [5.Lateral-Movement](5.Lateral-Movement/)
 
 - [Lateral Movement](5.Lateral-Movement/5.1.Lateral-Movement.md) - PsExec, WMI, WinRM, DCOM, Pass-the-Hash, Pass-the-Ticket
 - [Pivoting & Tunneling](5.Lateral-Movement/5.2.Pivoting-Tunneling.md) - SSH Port Forwarding, Proxychains, Ligolo-ng, Chisel, sshuttle, Metasploit Pivoting
+- [Ligolo-ng Complete Guide](5.Lateral-Movement/5.3.Ligolo-ng-Complete-Guide.md) - **Single-hop & multi-hop pivoting, tunnel setup, routing, troubleshooting**
 
-### [6.OS-Command](6.OS-Command/)
+### 💻 [6.OS-Command](6.OS-Command/)
 
 - [Windows Commands](6.OS-Command/6.1.Windows-command.md) - PowerShell, cmd, file transfer, enumeration
 - [Linux Commands](6.OS-Command/6.2.Linux-command.md) - File transfer, shell upgrading, networking, utilities
 - [Reverse Shell](6.OS-Command/6.3.Reverse-Shell.md) - Bash, Python, PHP, PowerShell, Netcat, Msfvenom, Shell Stabilization
 - [Wordlist Guide](6.OS-Command/6.4.Wordlist-Guide.md) - SecLists, Password/Username Wordlists, Service-Specific Lists, Custom Generation
 
-### [7.Web-Exploit](7.Web-Exploit/)
+### 🌐 [7.Web-Exploit](7.Web-Exploit/)
 
 - [Web Application Analysis](7.Web-Exploit/7.0.Web-Application-Analysis.md) - DNS, Subdomain, VHost, Directory Enumeration, Technology Fingerprinting, LFI, XSS, SSTI, SQLi, XXE
 - [SQL Injection](7.Web-Exploit/7.1.SQL-Injection.md) - SQLi, SQLMap, Union, Blind, MSSQL, MySQL, PostgreSQL
@@ -145,24 +180,34 @@ graph LR
 - [SSTI](7.Web-Exploit/7.6.SSTI.md) - Server-Side Template Injection, Jinja2, Twig, Freemarker
 - [XXE](7.Web-Exploit/7.7.XXE.md) - XML External Entity, OOB, Blind XXE
 - [File Upload](7.Web-Exploit/7.8.File-Upload.md) - Bypass Filters, Web Shells, Polyglot Files
+- [HTTP Request Smuggling](7.Web-Exploit/7.9.HTTP-Request-Smuggling.md) - **CL.TE, TE.CL, Cache Poisoning, Request Hijacking**
 - [IDOR & Access Control](7.Web-Exploit/7.10.IDOR-Access-Control.md) - Insecure Direct Object Reference, Broken Access Control
 - [CSRF](7.Web-Exploit/7.11.CSRF.md) - Cross-Site Request Forgery, Token Bypass
 - [Insecure Deserialization](7.Web-Exploit/7.12.Insecure-Deserialization.md) - PHP, Java (ysoserial), Python Pickle, .NET
 - [Git Hacking](7.Web-Exploit/7.13.Git-Hacking.md) - Exposed .git, GitDumper, Secret Extraction
+- [NoSQL Injection](7.Web-Exploit/7.14.NoSQL-Injection.md) - MongoDB, CouchDB, Authentication Bypass, Blind Injection
+- [JWT Attacks](7.Web-Exploit/7.15.JWT-Attacks.md) - Algorithm Confusion, None Algorithm, Key Confusion, JWK/JKU Injection
+- [Race Condition](7.Web-Exploit/7.16.Race-Condition.md) - Limit Overrun, TOCTOU, Turbo Intruder, Single-Packet Attack
+- [Prototype Pollution](7.Web-Exploit/7.17.Prototype-Pollution.md) - Server/Client-Side, RCE Gadgets, XSS Gadgets
+- [OAuth Vulnerabilities](7.Web-Exploit/7.18.OAuth-Vulnerabilities.md) - redirect_uri Bypass, Token Theft, CSRF, Scope Manipulation
+- [WebSocket Attacks](7.Web-Exploit/7.19.WebSocket-Attacks.md) - CSWSH, Message Manipulation, SQLi/XSS via WebSocket
+- [Mass Assignment](7.Web-Exploit/7.20.Mass-Assignment.md) - Parameter Pollution, Hidden Field Abuse, Auto-Binding
 
-### [8.C2-Framework](8.C2-Framework/)
+### 🎮 [8.C2-Framework](8.C2-Framework/)
 
 - [Sliver](8.C2-Framework/8.1.Sliver.md) - Installation, Implant Generation, Listeners, Session Management, Armory Extensions
 
-### [9.OSCP-Exam](9.OSCP-Exam/)
+### 🎯 [9.OSCP-Exam](9.OSCP-Exam/)
 
 - [OSCP Exam Guide](9.OSCP-Exam/9.1.OSCP-Exam-Guide.md) - Exam Structure, Passing Scenarios, Allowed/Restricted Tools, Screenshot Requirements, Report Submission, Exam Tips, **AD Set Step-by-Step Methodology**
+- [Lab Walkthrough Examples](9.OSCP-Exam/9.2.Lab-Walkthrough-Examples.md) - **Real attack chains: HTB Forest, OSCP Independent Challenge, AD Set attacks**
+- [Exam Tips & Tricks](9.OSCP-Exam/9.3.Exam-Tips-and-Tricks.md) - **Pre-exam prep, enumeration strategy, privilege escalation methodology, time management, report writing**
 
-### [10.Mobile-Security](10.Mobile-Security/)
+### 📱 [10.Mobile-Security](10.Mobile-Security/)
 
 - [Android Pentesting](10.Mobile-Security/10.1.Android-Pentesting.md) - APK Decompilation, apktool, jadx, APK Signing, ADB Commands, Frida SSL Pinning Bypass
 
-### [11.Defensive-Security](11.Defensive-Security/)
+### 🛡️ [11.Defensive-Security](11.Defensive-Security/)
 
 - [Network Forensics](11.Defensive-Security/11.1.Network-Forensics.md) - tshark, Wireshark, tcpdump, PCAP Analysis, DNS/HTTP/TLS Analysis, Exfiltration Detection
 - [SOC Analysis](11.Defensive-Security/11.2.SOC-Analysis.md) - YARA Rules, File Hash Analysis, Data Decoding, Log Analysis, Threat Intelligence
@@ -181,12 +226,25 @@ graph LR
 | PowerView | AD enumeration | Domain reconnaissance |
 | Impacket | Network protocols | SMB, Kerberos, WMI attacks |
 | Certipy | AD CS attacks | Certificate abuse |
+| pyWhisker | Shadow Credentials | msDS-KeyCredentialLink abuse |
+| PKINITtools | PKINIT authentication | Certificate-based auth |
+| bloodyAD | AD privilege escalation | RBCD, ACL abuse |
+| adPEAS | AD enumeration | PowerShell AD scanner |
+| RunasCs | Credential execution | Run as different user |
+| Seatbelt | Host reconnaissance | Windows enumeration |
+| SharpUp | Privilege escalation | Privesc checker (C#) |
 | LinPEAS/winPEAS | Privilege escalation | Enumeration scripts |
+| PrintSpoofer | Token impersonation | SeImpersonate privesc |
+| GodPotato | Token impersonation | Universal Potato exploit |
 | Chisel/Ligolo-ng | Tunneling | Port forwarding and pivoting |
 | SQLMap | SQL Injection | Automated SQLi exploitation |
 | FFuF | Web fuzzer | Directory/parameter fuzzing |
 | tplmap | SSTI exploitation | Template injection automation |
 | Gopherus | SSRF exploitation | Generate gopher payloads |
+| jwt_tool | JWT attacks | JWT manipulation and cracking |
+| Turbo Intruder | Race conditions | Burp extension for parallel requests |
+| Arjun | Parameter discovery | Hidden parameter finder |
+| wscat | WebSocket client | WebSocket testing |
 
 ---
 
@@ -209,3 +267,35 @@ graph LR
 | GTFOBins | Unix binaries exploitation | <https://gtfobins.github.io/> |
 | LOLBAS | Windows binaries exploitation | <https://lolbas-project.github.io/> |
 | WADCOMS | Windows/AD cheatsheet | <https://wadcoms.github.io/> |
+
+---
+
+<div align="center">
+
+## ⭐ Star History
+
+If you find this repository helpful, please consider giving it a star! ⭐
+
+---
+
+### 🤝 Contributing
+
+Contributions are welcome! Feel free to submit a Pull Request.
+
+---
+
+### 📜 Disclaimer
+
+> **⚠️ Educational Purpose Only**
+>
+> This repository is intended for educational and authorized penetration testing purposes only.
+> Always obtain proper authorization before testing any systems you do not own.
+> The author is not responsible for any misuse of the information provided.
+
+---
+
+<sub>Made with ❤️ for the InfoSec Community</sub>
+
+**[⬆ Back to Top](#-command-cheatsheet)**
+
+</div>

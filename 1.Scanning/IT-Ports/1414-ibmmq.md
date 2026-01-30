@@ -188,9 +188,9 @@ end
 
 ## Tools
 
-- pymqi: https://github.com/dsuch/pymqi
+- pymqi: <https://github.com/dsuch/pymqi>
 - IBM MQ Explorer: IBM Website
-- punch-q: https://github.com/sensepost/punch-q
+- punch-q: <https://github.com/sensepost/punch-q>
 
 ---
 

@@ -1,6 +1,7 @@
 # Port 9042, 9160 - Apache Cassandra
 
 ## Table of Contents
+
 - [Enumeration](#enumeration)
 - [Connect and Query](#connect-and-query)
 - [Exploitation](#exploitation)
@@ -97,8 +98,9 @@ SELECT * FROM <table>;
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
+target_host = "TARGET_IP"  # Replace with target
 auth = PlainTextAuthProvider(username='cassandra', password='cassandra')
-cluster = Cluster(['$rhost'], port=9042, auth_provider=auth)
+cluster = Cluster([target_host], port=9042, auth_provider=auth)
 session = cluster.connect()
 
 # List keyspaces

