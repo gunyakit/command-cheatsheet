@@ -38,15 +38,15 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 502 --script modbus-discover --script-args modbus-discover.aggressive=true $rhost
+nmap -p 502 --script "modbus-discover" --script-args modbus-discover.aggressive=true $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -p 502 $rhost
-nmap -p 502 --script modbus-discover $rhost
-nmap -p 502 --script modbus-discover --script-args modbus-discover.aggressive=true $rhost
+nmap -p 502 --script "modbus-discover" $rhost
+nmap -p 502 --script "modbus-discover" --script-args modbus-discover.aggressive=true $rhost
 ```
 
 ### Metasploit
@@ -208,7 +208,7 @@ client.close()
 
 | Tool | Command | Description |
 | :--- | :--- | :--- |
-| Nmap | `nmap -p 502 --script modbus-discover $rhost` | Discover Modbus |
+| Nmap | `nmap -p 502 --script "modbus-discover" $rhost` | Discover Modbus |
 | mbtget | `mbtget -r3 -a 0 -n 10 $rhost` | Read registers |
 | modbus-cli | `modbus read $rhost %MW0 10` | Read holding registers |
 | Metasploit | `use auxiliary/scanner/scada/modbusclient` | Modbus client |

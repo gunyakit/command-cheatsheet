@@ -13,15 +13,15 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p1080 --script socks-auth-info $rhost && curl -x socks5://$rhost:1080 http://ifconfig.me
+nmap -p1080 --script "socks-auth-info" $rhost && curl -x socks5://$rhost:1080 http://ifconfig.me
 ```
 
 ### Nmap Scripts
 
 ```shell
 nmap -sV -sC -p1080 $rhost
-nmap -p1080 --script socks-auth-info $rhost
-nmap -p1080 --script socks-brute $rhost
+nmap -p1080 --script "socks-auth-info" $rhost
+nmap -p1080 --script "socks-brute" $rhost
 ```
 
 ### Banner Grabbing
@@ -63,7 +63,7 @@ curl --socks5 $rhost:1080 http://10.0.0.1
 
 ```shell
 # Nmap brute force
-nmap -p1080 --script socks-brute \
+nmap -p1080 --script "socks-brute" \
   --script-args userdb=/usr/share/seclists/Usernames/top-usernames-shortlist.txt,passdb=/usr/share/wordlists/rockyou.txt \
   $rhost
 

@@ -13,15 +13,15 @@
 ### Quick Check (One-liner)
 
 ```shell
-rsync --list-only rsync://$rhost/ && nmap -p 873 --script rsync-list-modules $rhost
+rsync --list-only rsync://$rhost/ && nmap -p 873 --script "rsync-list-modules" $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 873 $rhost
-nmap -p 873 --script rsync-list-modules $rhost
-nmap -p 873 --script rsync-brute $rhost
+nmap -p 873 --script "rsync-list-modules" $rhost
+nmap -p 873 --script "rsync-brute" $rhost
 ```
 
 ### Banner Grabbing
@@ -41,7 +41,7 @@ nc -nv $rhost 873
 rsync --list-only rsync://$rhost/
 
 # Nmap script
-nmap -p 873 --script rsync-list-modules $rhost
+nmap -p 873 --script "rsync-list-modules" $rhost
 
 # Netcat
 nc -nv $rhost 873
@@ -116,7 +116,7 @@ curl "http://$rhost/shell.php?cmd=id"
 
 ```shell
 # Nmap
-nmap -p 873 --script rsync-brute --script-args userdb=users.txt,passdb=passwords.txt $rhost
+nmap -p 873 --script "rsync-brute" --script-args userdb=users.txt,passdb=passwords.txt $rhost
 
 # Hydra (if supported)
 hydra -L users.txt -P passwords.txt rsync://$rhost

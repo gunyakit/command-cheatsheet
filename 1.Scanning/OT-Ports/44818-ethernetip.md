@@ -28,14 +28,14 @@ EtherNet/IP is used by:
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 44818 --script enip-info $rhost
+nmap -p 44818 --script "enip-info" $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -p 44818 $rhost
-nmap -p 44818 --script enip-info $rhost
+nmap -p 44818 --script "enip-info" $rhost
 ```
 
 ### Using cpppo
@@ -144,7 +144,7 @@ with LogixDriver(target_host) as plc:
 
 | Tool | Command | Description |
 | :--- | :--- | :--- |
-| Nmap | `nmap -p 44818 --script enip-info $rhost` | Enumerate |
+| Nmap | `nmap -p 44818 --script "enip-info" $rhost` | Enumerate |
 | cpppo | `python -m cpppo.server.enip.list_identity $rhost` | List identity |
 | pycomm3 | `LogixDriver('$rhost')` | Connect to Allen-Bradley |
 | Metasploit | `use auxiliary/scanner/scada/ethernetip_info` | Scan |

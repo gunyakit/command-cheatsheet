@@ -28,14 +28,14 @@ OPC UA (Unified Architecture) is an industrial communication protocol for:
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 4840 --script opcua-info $rhost
+nmap -p 4840 --script "opcua-info" $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -p 4840 $rhost
-nmap -p 4840 --script opcua-info $rhost
+nmap -p 4840 --script "opcua-info" $rhost
 ```
 
 ### Using opcua-client-gui
@@ -235,7 +235,7 @@ for user in users:
 | :--- | :--- | :--- |
 | opcua-client | `opcua-client` | GUI client |
 | Python | `Client("opc.tcp://$rhost:4840")` | Connect via Python |
-| Nmap | `nmap -p 4840 --script opcua-info $rhost` | Enumerate |
+| Nmap | `nmap -p 4840 --script "opcua-info" $rhost` | Enumerate |
 
 | Port | Description |
 | :--- | :--- |

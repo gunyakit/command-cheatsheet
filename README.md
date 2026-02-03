@@ -36,9 +36,51 @@
 
 ![Penetration Testing Flow](./PenetrationTestingFlow.png)
 
+```
+┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+│    RECON    │──▶│  ENUMERATE  │──▶│   EXPLOIT   │──▶│  PRIV ESC   │──▶│   LATERAL   │
+│  Scanning   │   │ Ports/Web   │   │  CVE/Web    │   │ Linux/Win   │   │  Movement   │
+└─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘
+       │                 │                 │                 │                 │
+       ▼                 ▼                 ▼                 ▼                 ▼
+  [1.Scanning]     [Port Files]     [2.CVE-Exploit]  [4.Privilege-    [5.Lateral-
+                   [7.Web-Exploit]  [3.AD-Exploit]    Escalation]      Movement]
+```
+
+### 🚀 Quick Start Links
+
+| 🔥 Emergency | 📋 Checklists | 🔧 Tools |
+|--------------|---------------|----------|
+| [Emergency Commands](0.Quick-Reference/Emergency-Commands.md) | [Pentest Checklist](0.Quick-Reference/Pentest-Checklist.md) | [Tools Index](0.Quick-Reference/Tools-Index.md) |
+| [Reverse Shells](6.OS-Command/6.3.Reverse-Shell.md) | [OSCP Exam Guide](9.OSCP-Exam/9.1.OSCP-Exam-Guide.md) | [Variable Setup](0.Quick-Reference/Variable-Setup.md) |
+| [File Transfer](0.Quick-Reference/File-Transfer.md) | [Web Analysis](7.Web-Exploit/7.0.Web-Application-Analysis.md) | [Wordlist Guide](6.OS-Command/6.4.Wordlist-Guide.md) |
+
 ---
 
-## 📚 Table of Contents
+## � Standard Variables
+
+> All commands in this cheatsheet use these standardized variables. Set them before running commands.
+
+```shell
+export rhost="192.168.1.100"    # Remote/Target IP
+export lhost="10.10.14.5"       # Local/Attacker IP
+export lport="4444"             # Listener port
+export domain="corp.local"      # AD domain name
+```
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `$rhost` | Remote/Target host IP | `192.168.1.100` |
+| `$lhost` | Local/Attacker IP | `10.10.14.5` |
+| `$lport` | Local listener port | `4444` |
+| `$rport` | Remote target port | `80` |
+| `$domain` | AD domain name | `corp.local` |
+| `$user` | Username | `admin` |
+| `$pass` | Password | `Password123` |
+| `$wordlist` | Wordlist path | `/usr/share/wordlists/rockyou.txt` |
+| `$target` | OSCP exam target | Same as `$rhost` |
+
+---
 
 ### 🔍 [1.Scanning](1.Scanning/Port-Scanning.md)
 
@@ -161,6 +203,7 @@
 - [Lateral Movement](5.Lateral-Movement/5.1.Lateral-Movement.md) - PsExec, WMI, WinRM, DCOM, Pass-the-Hash, Pass-the-Ticket
 - [Pivoting & Tunneling](5.Lateral-Movement/5.2.Pivoting-Tunneling.md) - SSH Port Forwarding, Proxychains, Ligolo-ng, Chisel, sshuttle, Metasploit Pivoting
 - [Ligolo-ng Complete Guide](5.Lateral-Movement/5.3.Ligolo-ng-Complete-Guide.md) - **Single-hop & multi-hop pivoting, tunnel setup, routing, troubleshooting**
+- [Persistence Techniques](5.Lateral-Movement/5.4.Persistence-Techniques.md) - **Registry, Scheduled Tasks, Services, Cron, SSH Keys, Systemd**
 
 ### 💻 [6.OS-Command](6.OS-Command/)
 

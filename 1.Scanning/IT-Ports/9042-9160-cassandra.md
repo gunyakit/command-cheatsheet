@@ -13,15 +13,15 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 9042 --script cassandra-info $rhost && cqlsh $rhost 9042 -u cassandra -p cassandra -e "DESCRIBE KEYSPACES;"
+nmap -p 9042 --script "cassandra-info" $rhost && cqlsh $rhost 9042 -u cassandra -p cassandra -e "DESCRIBE KEYSPACES;"
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 9042,9160 $rhost
-nmap -p 9042 --script cassandra-info $rhost
-nmap -p 9042 --script cassandra-brute $rhost
+nmap -p 9042 --script "cassandra-info" $rhost
+nmap -p 9042 --script "cassandra-brute" $rhost
 ```
 
 ### Port Reference
@@ -136,7 +136,7 @@ cluster.shutdown()
 
 ```shell
 # Nmap
-nmap -p 9042 --script cassandra-brute \
+nmap -p 9042 --script "cassandra-brute" \
   --script-args userdb=users.txt,passdb=passwords.txt $rhost
 
 # Custom script

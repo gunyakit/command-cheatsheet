@@ -12,15 +12,15 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -sU -p 69 --script tftp-enum $rhost && tftp $rhost -c get /etc/passwd 2>/dev/null
+nmap -sU -p 69 --script "tftp-enum" $rhost && tftp $rhost -c get /etc/passwd 2>/dev/null
 ```
 
 ### Nmap
 
 ```shell
 nmap -sU -p 69 $rhost
-nmap -sU -p 69 --script tftp-enum $rhost
-nmap -sU -p 69 --script tftp-version $rhost
+nmap -sU -p 69 --script "tftp-enum" $rhost
+nmap -sU -p 69 --script "tftp-version" $rhost
 ```
 
 ### Check Service

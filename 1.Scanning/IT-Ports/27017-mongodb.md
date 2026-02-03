@@ -170,7 +170,7 @@ mongo $rhost:27017
 hydra -l admin -P /usr/share/wordlists/rockyou.txt $rhost mongodb
 
 # Using Nmap
-nmap --script mongodb-brute -p 27017 $rhost
+nmap --script "mongodb-brute" -p 27017 $rhost
 ```
 
 ---

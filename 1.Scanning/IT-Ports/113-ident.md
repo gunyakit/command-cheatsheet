@@ -12,14 +12,14 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 113 --script auth-owners $rhost && echo '22, 22' | nc -nv $rhost 113
+nmap -p 113 --script "auth-owners" $rhost && echo '22, 22' | nc -nv $rhost 113
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 113 $rhost
-nmap -p 113 --script auth-owners $rhost
+nmap -p 113 --script "auth-owners" $rhost
 ```
 
 ### Manual Query
@@ -57,7 +57,7 @@ done
 
 ```shell
 # Enumerate service owners
-nmap -sV --script auth-owners -p 22,25,80,443 $rhost
+nmap -sV --script "auth-owners" -p 22,25,80,443 $rhost
 
 # This will show which user owns each service
 ```
@@ -113,5 +113,5 @@ The ident service reveals:
 | Command | Description |
 | :--- | :--- |
 | `echo "22, 22" \| nc $rhost 113` | Query SSH service owner |
-| `nmap -p 113 --script auth-owners $rhost` | Enumerate owners |
-| `nmap --script auth-owners -p 22,80 $rhost` | Check specific ports |
+| `nmap -p 113 --script "auth-owners" $rhost` | Enumerate owners |
+| `nmap --script "auth-owners" -p 22,80 $rhost` | Check specific ports |

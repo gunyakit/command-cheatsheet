@@ -22,7 +22,7 @@
 ### Quick Check (One-liner)
 
 ```shell
-dig axfr @$rhost $domain && nmap -p 53 --script dns-zone-transfer $rhost
+dig axfr @$rhost $domain && nmap -p 53 --script "dns-zone-transfer" $rhost
 ```
 
 ### Nmap Scripts (One-liner)

@@ -12,15 +12,15 @@
 ### Quick Check (One-liner)
 
 ```shell
-curl -s "http://$rhost:631/printers" && nmap -p 631 --script cups-info,cups-queue-info $rhost
+curl -s "http://$rhost:631/printers" && nmap -p 631 --script "cups-info,cups-queue-info" $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 631 $rhost
-nmap -p 631 --script cups-info $rhost
-nmap -p 631 --script cups-queue-info $rhost
+nmap -p 631 --script "cups-info" $rhost
+nmap -p 631 --script "cups-queue-info" $rhost
 ```
 
 ### Web Interface
@@ -117,5 +117,5 @@ info
 | :--- | :--- |
 | `curl http://$rhost:631/` | Access CUPS web |
 | `curl http://$rhost:631/printers` | List printers |
-| `nmap -p 631 --script cups-* $rhost` | CUPS enumeration |
+| `nmap -p 631 --script "cups-*" $rhost` | CUPS enumeration |
 | `lpstat -h $rhost -a` | List printers via lpstat |

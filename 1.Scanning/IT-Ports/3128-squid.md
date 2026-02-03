@@ -13,14 +13,14 @@
 ### Quick Check (One-liner)
 
 ```shell
-curl -x http://$rhost:3128 http://ifconfig.me && nmap -p 3128 --script http-open-proxy $rhost
+curl -x http://$rhost:3128 http://ifconfig.me && nmap -p 3128 --script "http-open-proxy" $rhost
 ```
 
 ### Nmap Scripts
 
 ```shell
 nmap -sV -sC -p3128 $rhost
-nmap -p3128 --script http-open-proxy $rhost
+nmap -p3128 --script "http-open-proxy" $rhost
 ```
 
 ### Banner Grabbing

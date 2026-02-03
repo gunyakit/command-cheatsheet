@@ -30,14 +30,14 @@ BACnet is used in:
 ### Quick Check (One-liner)
 
 ```shell
-nmap -sU -p 47808 --script bacnet-info $rhost
+nmap -sU -p 47808 --script "bacnet-info" $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sU -p 47808 $rhost
-nmap -sU -p 47808 --script bacnet-info $rhost
+nmap -sU -p 47808 --script "bacnet-info" $rhost
 ```
 
 ### Using BACpypes
@@ -229,7 +229,7 @@ bacnet.write('$rhost binaryOutput 1 presentValue active - 1')
 
 | Tool | Command | Description |
 | :--- | :--- | :--- |
-| Nmap | `nmap -sU -p 47808 --script bacnet-info $rhost` | Enumerate |
+| Nmap | `nmap -sU -p 47808 --script "bacnet-info" $rhost` | Enumerate |
 | BAC0 | `bacnet.discover()` | Discover devices |
 | BAC0 | `bacnet.read('addr device 1 objectName')` | Read property |
 | Metasploit | `use auxiliary/scanner/scada/bacnet_info` | Scan |

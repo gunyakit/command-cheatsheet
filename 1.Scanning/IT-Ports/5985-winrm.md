@@ -27,7 +27,7 @@
 
 ```shell
 # Check WinRM + auth methods
-nmap -p 5985,5986 --script http-auth -sV $rhost && nxc winrm $rhost -u '' -p '' 2>/dev/null
+nmap -p 5985,5986 --script "http-auth" -sV $rhost && nxc winrm $rhost -u '' -p '' 2>/dev/null
 ```
 
 ### Nmap Scripts (One-liner)
@@ -129,7 +129,7 @@ end
 > Nmap WinRM brute force
 
 ```shell
-nmap -p 5985 --script http-brute --script-args userdb=users.txt,passdb=passwords.txt $rhost
+nmap -p 5985 --script "http-brute" --script-args userdb=users.txt,passdb=passwords.txt $rhost
 ```
 
 ### NetExec

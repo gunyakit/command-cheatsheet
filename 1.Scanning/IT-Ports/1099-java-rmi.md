@@ -12,15 +12,15 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 1099 --script rmi-dumpregistry,rmi-vuln-classloader $rhost
+nmap -p 1099 --script "rmi-dumpregistry,rmi-vuln-classloader" $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 1099 $rhost
-nmap -p 1099 --script rmi-dumpregistry $rhost
-nmap -p 1099 --script rmi-vuln-classloader $rhost
+nmap -p 1099 --script "rmi-dumpregistry" $rhost
+nmap -p 1099 --script "rmi-vuln-classloader" $rhost
 ```
 
 ### Using rmg (Remote Method Guesser)
@@ -134,7 +134,7 @@ java -cp ysoserial-all.jar ysoserial.exploit.JRMPListener 1099 CommonsCollection
 
 | Tool | Command | Description |
 | :--- | :--- | :--- |
-| Nmap | `nmap -p 1099 --script rmi-dumpregistry $rhost` | Dump registry |
+| Nmap | `nmap -p 1099 --script "rmi-dumpregistry" $rhost` | Dump registry |
 | rmg | `java -jar rmg.jar enum $rhost 1099` | Enumerate RMI |
 | BaRMIe | `java -jar BaRMIe.jar -enum $rhost 1099` | Enumerate & attack |
 | Metasploit | `use exploit/multi/misc/java_rmi_server` | RMI exploit |

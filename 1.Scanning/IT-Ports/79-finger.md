@@ -39,7 +39,7 @@ nc -nv $rhost 79
 nmap -p 79 -sV $rhost
 
 # Finger enumeration
-nmap -p 79 --script finger $rhost
+nmap -p 79 --script "finger" $rhost
 ```
 
 ### User Enumeration

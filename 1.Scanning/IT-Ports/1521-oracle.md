@@ -187,4 +187,4 @@ SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTEE='PUBLIC';
 | ODAT | `odat sidguesser -s $rhost` | Enumerate SIDs |
 | ODAT | `odat all -s $rhost -d $sid -U user -P pass` | All checks |
 | sqlplus | `sqlplus user/pass@$rhost:1521/SID` | Connect to DB |
-| Nmap | `nmap -p 1521 --script oracle-sid-brute $rhost` | SID brute force |
+| Nmap | `nmap -p 1521 --script "oracle-sid-brute" $rhost` | SID brute force |

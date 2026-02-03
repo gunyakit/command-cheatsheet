@@ -19,7 +19,7 @@ curl -s "http://$rhost:5984/" && curl -s "http://$rhost:5984/_all_dbs"
 
 ```shell
 nmap -sV -sC -p 5984,6984 $rhost
-nmap -p 5984 --script couchdb-databases,couchdb-stats $rhost
+nmap -p 5984 --script "couchdb-databases,couchdb-stats" $rhost
 ```
 
 ### Basic Information
@@ -172,4 +172,4 @@ run
 | :--- | :--- |
 | `curl http://$rhost:5984/` | Server info |
 | `curl http://$rhost:5984/_all_dbs` | List databases |
-| `nmap -p 5984 --script couchdb-* $rhost` | CouchDB enumeration |
+| `nmap -p 5984 --script "couchdb-*" $rhost` | CouchDB enumeration |

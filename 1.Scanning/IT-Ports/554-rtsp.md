@@ -12,15 +12,15 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 554 --script rtsp-methods,rtsp-url-brute $rhost
+nmap -p 554 --script "rtsp-methods,rtsp-url-brute" $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 554 $rhost
-nmap -p 554 --script rtsp-methods $rhost
-nmap -p 554 --script rtsp-url-brute $rhost
+nmap -p 554 --script "rtsp-methods" $rhost
+nmap -p 554 --script "rtsp-url-brute" $rhost
 ```
 
 ### Check RTSP Methods
@@ -30,7 +30,7 @@ nmap -p 554 --script rtsp-url-brute $rhost
 curl -i -X OPTIONS rtsp://$rhost:554/
 
 # Using nmap
-nmap -p 554 --script rtsp-methods $rhost
+nmap -p 554 --script "rtsp-methods" $rhost
 ```
 
 ### Manual RTSP Request
@@ -95,10 +95,10 @@ ffmpeg -i rtsp://user:password@$rhost:554/stream -c copy output.mp4
 
 ```shell
 # Nmap script
-nmap -p 554 --script rtsp-url-brute $rhost
+nmap -p 554 --script "rtsp-url-brute" $rhost
 
 # Custom wordlist
-nmap -p 554 --script rtsp-url-brute \
+nmap -p 554 --script "rtsp-url-brute" \
   --script-args rtsp-url-brute.urlfile=rtsp_urls.txt $rhost
 ```
 
@@ -158,7 +158,7 @@ ffprobe rtsp://$rhost:554/stream
 
 | Command | Description |
 | :--- | :--- |
-| `nmap -p 554 --script rtsp-methods $rhost` | Get RTSP methods |
-| `nmap -p 554 --script rtsp-url-brute $rhost` | Find streams |
+| `nmap -p 554 --script "rtsp-methods" $rhost` | Get RTSP methods |
+| `nmap -p 554 --script "rtsp-url-brute" $rhost` | Find streams |
 | `vlc rtsp://$rhost:554/stream` | View stream |
 | `ffmpeg -i rtsp://$rhost:554/stream -c copy out.mp4` | Record stream |

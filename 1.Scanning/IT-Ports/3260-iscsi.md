@@ -12,14 +12,14 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 3260 --script iscsi-info $rhost && iscsiadm -m discovery -t sendtargets -p $rhost
+nmap -p 3260 --script "iscsi-info" $rhost && iscsiadm -m discovery -t sendtargets -p $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 3260 $rhost
-nmap -p 3260 --script iscsi-info $rhost
+nmap -p 3260 --script "iscsi-info" $rhost
 ```
 
 ### Discover Targets

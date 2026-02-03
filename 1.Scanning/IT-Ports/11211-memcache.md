@@ -20,7 +20,7 @@ echo 'stats' | nc -nv $rhost 11211 && echo 'stats items' | nc -nv $rhost 11211
 
 ```shell
 nmap -sV -sC -p 11211 $rhost
-nmap -p 11211 --script memcached-info $rhost
+nmap -p 11211 --script "memcached-info" $rhost
 ```
 
 ### Banner Grabbing
@@ -200,6 +200,6 @@ run
 
 | Tool | Command |
 | :--- | :--- |
-| Nmap | `nmap -p 11211 --script memcached-info $rhost` |
+| Nmap | `nmap -p 11211 --script "memcached-info" $rhost` |
 | memcdump | `memcdump --servers=$rhost:11211` |
 | netcat | `echo "stats" \| nc $rhost 11211` |

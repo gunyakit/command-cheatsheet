@@ -23,7 +23,7 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 21 --script ftp-anon,ftp-syst,ftp-vsftpd-backdoor $rhost && echo quit | nc -vn $rhost 21
+nmap -p 21 --script "ftp-anon,ftp-syst,ftp-vsftpd-backdoor" $rhost && echo quit | nc -vn $rhost 21
 ```
 
 ### Quick Anonymous Check (One-liner)
@@ -33,7 +33,7 @@ nmap -p 21 --script ftp-anon,ftp-syst,ftp-vsftpd-backdoor $rhost && echo quit | 
 echo -e "USER anonymous\nPASS anonymous\nPASWD\nLIST -la\nQUIT" | nc -vn $rhost 21
 
 # Nmap anonymous check
-nmap -p 21 --script ftp-anon,ftp-syst $rhost
+nmap -p 21 --script "ftp-anon,ftp-syst" $rhost
 ```
 
 ### FTP Commands
@@ -110,13 +110,13 @@ ftp://anonymous:anonymous@$rhost
 
 ```shell
 # FTP server features
-nmap -p 21 --script ftp-features $rhost
+nmap -p 21 --script "ftp-features" $rhost
 
 # FTP anonymous login
-nmap -p 21 --script ftp-anon $rhost
+nmap -p 21 --script "ftp-anon" $rhost
 
 # FTP brute force
-nmap -p 21 --script ftp-brute $rhost
+nmap -p 21 --script "ftp-brute" $rhost
 ```
 
 ### FTP Bounce Attack
@@ -151,8 +151,8 @@ mirror /
 
 > Nmap FTP brute force script
 ```shell
-nmap -p 21 --script ftp-brute $rhost
-nmap -p 21 --script ftp-brute --script-args userdb=users.txt,passdb=passwords.txt $rhost
+nmap -p 21 --script "ftp-brute" $rhost
+nmap -p 21 --script "ftp-brute" --script-args userdb=users.txt,passdb=passwords.txt $rhost
 ```
 
 ### Hydra

@@ -12,14 +12,14 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 9100 --script pjl-ready-message $rhost && nc -nv $rhost 9100
+nmap -p 9100 --script "pjl-ready-message" $rhost && nc -nv $rhost 9100
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 9100 $rhost
-nmap -p 9100 --script pjl-ready-message $rhost
+nmap -p 9100 --script "pjl-ready-message" $rhost
 ```
 
 ### Banner Grabbing
@@ -137,7 +137,7 @@ echo -e '\033%-12345X@PJL INITIALIZE\r\n\033%-12345X' | nc $rhost 9100
 | :--- | :--- | :--- |
 | PRET | `python pret.py $rhost pjl` | Connect to printer |
 | nc | `echo "@PJL INFO ID" \| nc $rhost 9100` | Send PJL command |
-| Nmap | `nmap -p 9100 --script pjl-ready-message $rhost` | Get ready message |
+| Nmap | `nmap -p 9100 --script "pjl-ready-message" $rhost` | Get ready message |
 
 | Port | Protocol |
 | :--- | :--- |

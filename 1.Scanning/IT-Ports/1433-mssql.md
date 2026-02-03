@@ -71,10 +71,10 @@ nxc mssql $rhost -u '$user' -p '$pass' --local-auth -q "SELECT * FROM sys.server
 nmap -p 1433 $rhost
 
 # Instance discovery (UDP 1434)
-nmap -sU -p 1434 --script ms-sql-discover $rhost
+nmap -sU -p 1434 --script "ms-sql-discover" $rhost
 
 # Brute force
-nmap -p 1433 --script ms-sql-brute --script-args userdb=users.txt,passdb=passwords.txt $rhost
+nmap -p 1433 --script "ms-sql-brute" --script-args userdb=users.txt,passdb=passwords.txt $rhost
 ```
 
 ### Metasploit
@@ -100,19 +100,19 @@ run
 > Brute force MSSQL using Nmap scripts
 
 ```shell
-nmap -p 1433 --script ms-sql-brute --script-args userdb=users.txt,passdb=passwords.txt $rhost
+nmap -p 1433 --script "ms-sql-brute" --script-args userdb=users.txt,passdb=passwords.txt $rhost
 ```
 
 > Brute force with specific credentials
 
 ```shell
-nmap -p 1433 --script ms-sql-brute --script-args mssql.username=sa,mssql.password=password $rhost
+nmap -p 1433 --script "ms-sql-brute" --script-args mssql.username=sa,mssql.password=password $rhost
 ```
 
 > Brute force with default wordlists
 
 ```shell
-nmap -p 1433 --script ms-sql-brute --script-args userdb=/usr/share/seclists/Usernames/mssql-usernames-nansh0u-guardicore.txt,passdb=/usr/share/seclists/Passwords/mssql-passwords-nansh0u-guardicore.txt $rhost
+nmap -p 1433 --script "ms-sql-brute" --script-args userdb=/usr/share/seclists/Usernames/mssql-usernames-nansh0u-guardicore.txt,passdb=/usr/share/seclists/Passwords/mssql-passwords-nansh0u-guardicore.txt $rhost
 ```
 
 ### Hydra

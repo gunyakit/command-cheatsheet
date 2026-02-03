@@ -19,7 +19,7 @@
 ### Quick Check (One-liner)
 
 ```shell
-nc -vn $rhost 22 && nmap -p 22 --script ssh-auth-methods,ssh2-enum-algos $rhost
+nc -vn $rhost 22 && nmap -p 22 --script "ssh-auth-methods,ssh2-enum-algos" $rhost
 ```
 
 ### Banner Grabbing (One-liner)
@@ -39,7 +39,7 @@ ssh-audit $rhost 2>/dev/null | head -30
 nmap -p 22 -sV --script "ssh-*" $rhost
 
 # Quick enumeration
-nmap -p 22 --script ssh-auth-methods,ssh2-enum-algos,ssh-hostkey --script-args="ssh.user=root" $rhost
+nmap -p 22 --script "ssh-auth-methods,ssh2-enum-algos,ssh-hostkey" --script-args="ssh.user=root" $rhost
 ```
 
 ### Legacy Algorithms (One-liner)
@@ -86,10 +86,37 @@ nxc ssh $rhost -u users.txt -p passwords.txt
 nxc ssh $rhost -C /usr/share/seclists/Passwords/Default-Credentials/ssh-betterdefaultpasslist.txt
 ```
 
+### SSH Default Credentials Reference
+
+| Vendor/Device | Username | Password |
+|---------------|----------|----------|
+| APC UPS | apc | apc |
+| Brocade | admin | password, fibranne |
+| Cisco | cisco | cisco |
+| Cisco | admin | admin |
+| Citrix | root | nsroot |
+| Dell iDRAC | root | calvin |
+| F5 BIG-IP | root | default |
+| FortiGate | admin | (blank) |
+| HP iLO | Administrator | (varies) |
+| Juniper | root | (blank) |
+| Netgear | admin | password |
+| Palo Alto | admin | admin |
+| Raspberry Pi | pi | raspberry |
+| SonicWall | admin | password |
+| Synology | admin | (blank) |
+| Ubiquiti | ubnt | ubnt |
+| Ubuntu | ubuntu | ubuntu |
+| VMware ESXi | root | vmware |
+| Zyxel | admin | 1234 |
+| pfSense | admin | pfsense |
+
+> **Wordlist Location**: `/usr/share/seclists/Passwords/Default-Credentials/`
+
 ### Nmap
 
 ```shell
-nmap -p 22 --script ssh-brute --script-args userdb=users.txt,passdb=passwords.txt $rhost
+nmap -p 22 --script "ssh-brute" --script-args userdb=users.txt,passdb=passwords.txt $rhost
 ```
 
 ### Metasploit

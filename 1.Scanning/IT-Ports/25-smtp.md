@@ -44,7 +44,7 @@ smtp-user-enum -M VRFY -U users.txt -t $rhost && smtp-user-enum -M EXPN -U users
 ### Open Relay Check (One-liner)
 
 ```shell
-nmap -p 25 --script smtp-open-relay $rhost
+nmap -p 25 --script "smtp-open-relay" $rhost
 ```
 
 ### smtp-user-enum
@@ -151,8 +151,8 @@ QUIT
 > Nmap open relay check
 
 ```shell
-nmap -p 25 --script smtp-open-relay $rhost
-nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.domain=external.com $rhost
+nmap -p 25 --script "smtp-open-relay" $rhost
+nmap -p 25 --script "smtp-open-relay" --script-args smtp-open-relay.domain=external.com $rhost
 ```
 
 ---
@@ -173,8 +173,8 @@ hydra -l admin -P /usr/share/wordlists/rockyou.txt smtp://$rhost -V
 > SMTP brute force script
 
 ```shell
-nmap -p 25 --script smtp-brute $rhost
-nmap -p 25 --script smtp-brute --script-args userdb=users.txt,passdb=pass.txt $rhost
+nmap -p 25 --script "smtp-brute" $rhost
+nmap -p 25 --script "smtp-brute" --script-args userdb=users.txt,passdb=pass.txt $rhost
 ```
 
 ### Metasploit

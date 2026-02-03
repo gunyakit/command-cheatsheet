@@ -19,7 +19,7 @@ curl -s "http://$rhost:9200" && curl -s "http://$rhost:9200/_cat/indices?v"
 
 ```shell
 nmap -sV -sC -p 9200 $rhost
-nmap -p 9200 --script http-methods $rhost
+nmap -p 9200 --script "http-methods" $rhost
 ```
 
 ### Basic Information

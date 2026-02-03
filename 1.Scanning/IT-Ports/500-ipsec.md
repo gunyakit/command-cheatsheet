@@ -13,14 +13,14 @@
 ### Quick Check (One-liner)
 
 ```shell
-ike-scan -A $rhost && nmap -sU -p 500 --script ike-version $rhost
+ike-scan -A $rhost && nmap -sU -p 500 --script "ike-version" $rhost
 ```
 
 ### Nmap Scripts
 
 ```shell
 nmap -sU -sV -p500 $rhost
-nmap -sU -p500 --script ike-version $rhost
+nmap -sU -p500 --script "ike-version" $rhost
 ```
 
 ### ike-scan

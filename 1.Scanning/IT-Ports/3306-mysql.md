@@ -20,7 +20,7 @@
 ### Quick Check (One-liner)
 
 ```shell
-nmap -p 3306 --script mysql-info,mysql-enum $rhost && mysql -h $rhost -u root -e "SELECT @@version" 2>/dev/null
+nmap -p 3306 --script "mysql-info,mysql-enum" $rhost && mysql -h $rhost -u root -e "SELECT @@version" 2>/dev/null
 ```
 
 ### Quick Connection Test (One-liner)
@@ -40,7 +40,7 @@ mysql -h $rhost -u root --skip-ssl -e "SELECT @@version;" 2>/dev/null && echo "[
 nmap -p 3306 --script "mysql-*" $rhost
 
 # Quick enum + brute
-nmap -p 3306 --script mysql-info,mysql-enum,mysql-brute $rhost
+nmap -p 3306 --script "mysql-info,mysql-enum,mysql-brute" $rhost
 ```
 
 ### Database Enumeration (One-liner)
@@ -128,7 +128,7 @@ hydra -L users.txt -P passwords.txt -f mysql://$rhost
 ### Nmap
 
 ```shell
-nmap -p 3306 --script mysql-brute $rhost
+nmap -p 3306 --script "mysql-brute" $rhost
 ```
 
 ### Metasploit
